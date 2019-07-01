@@ -31,22 +31,23 @@
 			target = this;
 			i--;//拿到第一个扩展对象
 		}
-		// 浅拷贝
+		
 		for(;i < length;i++) {
 			if((options = arguments[i]) !== null) {
 				for(name in options) {
-					src = target[name]; // 目标
-					copy = options[name];
-					// 深拷贝 (要拷贝的是对象或者是数组)
+					src = target[name]; // 目标健
+					copy = options[name]; // 拷贝健的值
+					// 深拷贝 (要拷贝的健是对象或者是数组)
 					if(deep && (jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)))) {
 						if (copyIsArray) {
-							clone = jQuery.isArray(src)? src: []; // 目标对象
+							copyIsArray = false;
+							clone = jQuery.isArray(src)? src: []; // 目标数组
 						} else{
 							clone = jQuery.isPlainObject(src)? src: {}; //目标对象
 						}
 						target[name] = jQuery.extend(deep, clone, copy);
 					//浅拷贝
-					} else if(clone !== 'undefined') {
+					} else if(copy !== 'undefined') {
 						target[name] = copy;
 
 					}
@@ -66,9 +67,6 @@
 			return toString.call(obj) === '[object Array]';
 		}
 	})
-
-
-
 
 	jQuery.fn.init.prototype = jQuery.prototype;
 	root.$ = root.jQuery = jQuery;
