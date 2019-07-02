@@ -26,7 +26,7 @@
 					jQuery.merge(this,jQuery.parseHtml(selector,context));
 				//查询dom
 				} else {
-					elem = document.querySelector(selector);
+					elem = document.querySelectorAll(selector);
 					elems = Array.prototype.slice.call(elem);
 					this.length = elems.length;
 					for(;index < elems;index++) {
@@ -35,16 +35,20 @@
 					this.context = context;
 					this.selector = selector;
 				}
+			// 传入dom节点
 			} else if (selector.nodeType) {
 				this.context = this[0] = selector;
 				this.length = 1;
 				return this;
+			} else if(jQuery.isFunction(selector)) {
+				return typeof jQuery.ready !== 'undefined'?
+				jQuery.ready(selector) : 
+				// Execute immediately if ready is not present
+				selector(jQuery);
 			} 
 
 		}
 	}
-	
-
 
 	//extend方法
 	jQuery.extend = jQuery.fn.extend = function() {
@@ -96,6 +100,10 @@
 	}
 
 	jQuery.extend({
+		// 判断是否为函数
+		 isFunction( obj ) {
+		    return typeof obj === "function" && typeof obj.nodeType !== "number";
+		},
 		isPlainObject: function(obj) {
 			return toString.call(obj) === '[object Object]';
 		},
@@ -125,11 +133,11 @@
 				return null;
 			}
 			var parse = rejectExp.exec(data);
-			console.log(parse);
 			return [context.createElement(parse[1])];
 
 		}
 	})
+
 
 	jQuery.fn.init.prototype = jQuery.prototype;
 	root.$ = root.jQuery = jQuery;
