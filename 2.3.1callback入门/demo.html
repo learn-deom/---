@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>callback入门</title>
+</head>
+<body>
+<script type="text/javascript" src='./Underscore.js'></script>	
+<script type="text/javascript">
+		var cb = _.callback('memory')
+		cb.add(function() {
+			console.log(1)
+		})
+		cb.add(function() {
+			console.log(2)
+		})
+		cb.fire()
+cb.add(function() {
+			console.log(3)
+		})
+	
+	</script>
+</body>
+</html>
