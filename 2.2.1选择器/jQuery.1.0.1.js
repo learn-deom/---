@@ -1,6 +1,6 @@
 (function(root) {
 	var version = "1.0.1";
-	 var rejectExp = /^<(\w+)\s*\/?>(?:<\/\1>|)$/; 
+	var rejectExp = /^<(\w+)\s*\/?>(?:<\/\1>|)$/; 
 	var rquickExpr = /^(?:\s*(<[\w\W]+>)[^>]*|#([\w-]+))$/;
 	var jQuery = function(selector, context) {
 		return new jQuery.prototype.init(selector, context);
@@ -70,8 +70,7 @@
 		if (length === i) {
 			target = this;
 			i--;//拿到第一个扩展对象
-		}
-		
+		}		
 		for(;i < length;i++) {
 			if((options = arguments[i]) !== null) {
 				for(name in options) {
@@ -89,9 +88,7 @@
 					//浅拷贝
 					} else if(copy !== 'undefined') {
 						target[name] = copy;
-
-					}
-					
+					}					
 				}
 			}
 		}
