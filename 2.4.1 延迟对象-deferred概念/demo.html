@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+<div id="box"></div>
+<div class="box"></div>
+<script type="text/javascript" src="./jQuery.1.0.2.js"></script>
+<script type="text/javascript">
+	 var wait = function () {
+		  var der = $.Deferred();
+		  console.log(der)
+          console.log("老司机来了")
+          der.reject('max');
+		  return der
+	 }
+
+	 $.when(wait())
+		 .done(function () {
+			  console.log('执行成功')
+
+		 }).fail(function () {
+		  console.log('执行失败')
+	 })
+</script>
+</body>
+</html>
