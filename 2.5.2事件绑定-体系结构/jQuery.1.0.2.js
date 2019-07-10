@@ -5,6 +5,7 @@
  * @Last Modified time: 2018-11-01 22:10:22
  */
 (function(root) {
+	 var log = console.log
 	var testExp = /^\s*(<[\w\W]+>)[^>]*$/;
 	var rejectExp = /^<(\w+)\s*\/?>(?:<\/\1>|)$/;
 	var core_version = "1.0.1";
@@ -161,7 +162,6 @@
 			}
 			//过滤掉<a>   <a>   => a 
 			var parse = rejectExp.exec(data);
-			console.log(parse)
 			return [context.createElement(parse[1])];
 		},
 
@@ -271,12 +271,10 @@
 		 args     自定义回调函数参数
 		 */
 		each: function(object, callback, args) {
-			console.log(object)
 			//object  数组对象 || object对象 
 			var length = object.length;
 			var name, i = 0;
-
-			// 自定义callback 参数
+			 // 自定义callback 参数
 			if (args) {
 				if (length === undefined) {
 					for (name in object) {
@@ -306,92 +304,74 @@
 		//jQuery.expando是jQuery的静态属性,对于jQuery的每次加载运行期间时唯一的随机数
 		this.expando = jQuery.expando + Math.random();
 		this.cache = {};
-		console.log(this.expando);
 	}
 
 	Data.uid = 1;
 
 	Data.prototype = {
 		key: function(elem) {
-			var descriptor = {},
-				unlock = elem[this.expando];
-
-			if (!unlock) {
-				unlock = Data.uid++;
-				descriptor[this.expando] = {   //钥匙
-					value: unlock
-				};
-				//方法直接在一个对象上定义一个或多个新的属性或修改现有属性,并返回该对象。
-				//DOM   =>  jQuery101089554822917892030.7449198463843298 = 1;
-				Object.defineProperties(elem, descriptor);
-			}
-			//确保缓存对象记录信息
-			if (!this.cache[unlock]) {
-				this.cache[unlock] = {};   //  数据
-			}
-
-			return unlock;
+			 var descriptor = {};
+			 var unlock = elem[this.expando]
+			 // dom对象没有值就存值
+			 if(!unlock) {
+			 	 // descriptor=｛this.expando: Data.uid++｝
+				  unlock = Data.uid++
+			 	 descriptor[this.expando] = {
+			 	 	 value : unlock
+				 }
+				 Object.defineProperties(elem, descriptor)
+			 }
+			 // 缓存没值就定义一个对象
+			 if (!this.cache[unlock]) {
+			 	 this.cache[unlock] = {};
+			 }
+			 return unlock;
 		},
 
 		get: function(elem, key) {
-			//找到或者创建缓存
-			var cache = this.cache[this.key(elem)];    //1  {events:{},handle:function(){}} 
-			//key 有值直接在缓存中取读
-			return key === undefined ? cache : cache[key];
+			var cache = this.cache[this.key(elem)]
+			 return key === undefined ? cache: cache[key]
 		},
 	}
 
 	var data_priv = new Data();
 
-
-
-
-	//jQuery 事件模块
+	 //jQuery 事件模块
 	jQuery.event = {
 		//1:利用 data_priv 数据缓存,分离事件与数据 2:元素与缓存中建立 guid 的映射关系用于查找 
 		add: function(elem, type, handler) {
-			var eventHandle, events,handlers;
-			//事件缓存 数据对象
-			var elemData = data_priv.get(elem);
+			 var events, eventHandle, handlers;
+			 var elemData = data_priv.get(elem)
 
+			 //检测handler是否存在ID(guid)如果没有那么传给他一个ID
+			 //添加ID的目的是 用来寻找或者删除相应的事件
+			 if (!handler.guid) {
+				  handler.guid = jQuery.guid++;   //guid == 1
+			 }
+			 if(!(events = elemData.events)) {
+				  events = elemData.events = {}
+			 }
+			 if(!(handlers = events[type])) {
+				  handlers = events[type] = []
+			 }
+			 if(!(eventHandle = elemData.handle)) {
+				  eventHandle = elemData.handle = function (e) {
+						jQuery.event.dispatch.apply(elem, arguments)
+				  }
+			 }
+			 elemData.elem = elem;
+			 handlers.push({
+				  type: type,
+				  handler: handler,
+				  guid: handler.guid
+			 })
+			 console.log(data_priv.cache)
+			 if (elem.addEventListener) {
 
-			//检测handler是否存在ID(guid)如果没有那么传给他一个ID
-			//添加ID的目的是 用来寻找或者删除相应的事件
-			if (!handler.guid) {
-				handler.guid = jQuery.guid++;   //guid == 1
-			}
-			/*
-			给缓存增加事件处理句柄
-			elemData = {
-			  events:
-			  handle:	
-			}
-			*/
-			//同一个元素,不同事件,不重复绑定    {events:{}}
-			if (!(events = elemData.events)) {
-				events = elemData.events = {};
-			}
-			if (!(eventHandle = elemData.handle)) {
-				//Event 对象代表事件的状态 通过apply传递
-				eventHandle = elemData.handle = function(e) {
-					return jQuery.event.dispatch.apply(eventHandle.elem, arguments);
-				}
-			}
-			eventHandle.elem = elem;
-			//通过events存储同一个元素上的多个事件   {events:{click:[]}}   
-			if (!(handlers = events[type])) {
-				handlers = events[type] = [];
-				handlers.delegateCount = 0;  //有多少事件代理默认0
-			}
-			handlers.push({
-				type: type,
-				handler: handler,
-				guid: handler.guid,
-			});
-			//添加事件
-			if (elem.addEventListener) {
-				elem.addEventListener(type, eventHandle, false);
-			}
+			 	 elem.addEventListener(type, eventHandle, false)
+
+			 }
+
 		},
 		
 		//修复事件对象event 从缓存体中的events对象取得对应队列。
@@ -401,7 +381,6 @@
 
 			//提取当前元素在cache中的events属性值。 click
 			var handlers = (data_priv.get(this, "events") || {})[event.type] || [];
-			console.log(handlers)
 			event.delegateTarget = this;
 			//执行事件处理函数
 		   jQuery.event.handlers.call( this, event, handlers );
@@ -409,67 +388,28 @@
 		
 		//执行事件处理函数
 		handlers: function( event, handlers ) {
-			handlers[0].handler.call(this, event);
-		},
+			 handlers[0].handler.call(this,event)
 
-		fix: function(event) {
-			if (event[jQuery.expando]) {
-				return event;
-			}
-			// Create a writable copy of the event object and normalize some properties
-			var i, prop, copy,
-				type = event.type,
-				originalEvent = event,
-				fixHook = this.fixHooks[type];
-
-			if (!fixHook) {
-				this.fixHooks[type] = fixHook =
-					rmouseEvent.test(type) ? this.mouseHooks :
-					rkeyEvent.test(type) ? this.keyHooks : {};
-			}
-			copy = fixHook.props ? this.props.concat(fixHook.props) : this.props;
-
-			event = new jQuery.Event(originalEvent);
-
-			i = copy.length;
-			while (i--) {
-				prop = copy[i];
-				event[prop] = originalEvent[prop];
-			}
-
-			// Support: Cordova 2.5 (WebKit) (#13255)
-			// All events should have a target; Cordova deviceready doesn't
-			if (!event.target) {
-				event.target = document;
-			}
-
-			// Support: Safari 6.0+, Chrome < 28
-			// Target should not be a text node (#504, #13143)
-			if (event.target.nodeType === 3) {
-				event.target = event.target.parentNode;
-			}
-
-			return fixHook.filter ? fixHook.filter(event, originalEvent) : event;
-		},
+		}
 	}
 
 	jQuery.fn.extend({
 		each: function(callback, args) {
-			return jQuery.each(this, callback, args);
+			 jQuery.each(this, callback, args)
 		},
 
 		on: function(types, fn) {
-			var type;
-			if (typeof types === "object") {
-				for (type in types) {
-					this.on(types[type], fn);
+			 var type
+			 if (typeof types === 'object') {
+				for(type in types) {
+					 this.on(type, types[type])
 				}
-			}
+				return
+			 }
+			 return this.each(function () {
+				  jQuery.event.add(this, types, fn)
+			 })
 
-			return this.each(function() {
-				//this  element对象
-				jQuery.event.add(this, types, fn);
-			});
 		}
 	})
 
