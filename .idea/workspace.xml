@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a5cc322-407f-4557-bb50-d74c6b19a9f9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/module1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,50 +21,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="demo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/demo.html">
+      <file leaf-file-name="webpack.config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/webpack.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+            <state relative-caret-position="125">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/专题三-react-native/初识react/demo.html">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+            <state relative-caret-position="25">
+              <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/index.js">
+      <file leaf-file-name="module1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/module1.js">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="underscore.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/underscore.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2075">
-              <caret line="98" column="19" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
-              <folding>
-                <element signature="e#1554#1845#0" />
-              </folding>
+              <caret column="14" selection-start-column="7" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -117,8 +100,11 @@
         <option value="$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/demo.html" />
         <option value="$PROJECT_DIR$/专题三-react-native/初识react/demo.html" />
         <option value="$PROJECT_DIR$/专题四-webpack/package.json" />
-        <option value="$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json" />
         <option value="$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/index.js" />
+        <option value="$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json" />
+        <option value="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/module1.js" />
+        <option value="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/app.js" />
+        <option value="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/webpack.config.js" />
       </list>
     </option>
   </component>
@@ -128,9 +114,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/node_modules" />
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json" />
+      <path value="$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -163,6 +153,27 @@
               <item name="专题四-webpack" type="462c0819:PsiDirectoryNode" />
               <item name="4.1-webpack工程化" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="网易微专业" type="b2602c69:ProjectViewProjectNode" />
+              <item name="网易微专业" type="462c0819:PsiDirectoryNode" />
+              <item name="专题四-webpack" type="462c0819:PsiDirectoryNode" />
+              <item name="4.2-webpack核心概念" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="网易微专业" type="b2602c69:ProjectViewProjectNode" />
+              <item name="网易微专业" type="462c0819:PsiDirectoryNode" />
+              <item name="专题四-webpack" type="462c0819:PsiDirectoryNode" />
+              <item name="4.2-webpack核心概念" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="网易微专业" type="b2602c69:ProjectViewProjectNode" />
+              <item name="网易微专业" type="462c0819:PsiDirectoryNode" />
+              <item name="专题四-webpack" type="462c0819:PsiDirectoryNode" />
+              <item name="4.2-webpack核心概念" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -173,6 +184,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -182,9 +194,13 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\高级前端工程师\网易微专业\专题四-webpack\4.1-webpack工程化" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\mayn\Desktop\网易微专业\专题二-underscore" />
       <recent name="C:\Users\mayn\Desktop\网易微专业\2.5.3-事件绑定-自定义设计 or 模拟事件" />
@@ -235,7 +251,8 @@
       <workItem from="1566633996477" duration="267000" />
       <workItem from="1568731821265" duration="1352000" />
       <workItem from="1569506216333" duration="14000" />
-      <workItem from="1569596740440" duration="644000" />
+      <workItem from="1569596740440" duration="842000" />
+      <workItem from="1569677364988" duration="2396000" />
     </task>
     <task id="LOCAL-00001" summary="'2.4.1 延迟对象-deferred'">
       <created>1562466416312</created>
@@ -258,24 +275,30 @@
       <option name="project" value="LOCAL" />
       <updated>1569596906094</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="4.1、webpack工程化">
+      <created>1569597489930</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569597489930</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34325000" />
+    <option name="totallyTimeSpent" value="36919000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11116965" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.8484188" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.6019629" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32824427" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32824427" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -324,44 +347,10 @@
     <MESSAGE value="'2.4.1 延迟对象-deferred'" />
     <MESSAGE value="'3.1.2-underscore整体结构'" />
     <MESSAGE value="初始react native" />
-    <option name="LAST_COMMIT_MESSAGE" value="初始react native" />
+    <MESSAGE value="4.1、webpack工程化" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.1、webpack工程化" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/underscore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1975">
-          <caret line="79" column="51" selection-start-line="79" selection-start-column="51" selection-end-line="79" selection-end-column="51" />
-          <folding>
-            <element signature="e#1554#1845#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/demo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/underscore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="80" column="25" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="25" />
-          <folding>
-            <element signature="e#1554#1845#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2.5.3-事件绑定-自定义设计 or 模拟事件/jQuery.1.0.2.js" />
     <entry file="file://$PROJECT_DIR$/2.5.3-事件绑定-自定义设计 or 模拟事件/demo.html" />
     <entry file="file://$PROJECT_DIR$/2.5.2事件绑定-体系结构/demo.html" />
     <entry file="file://$PROJECT_DIR$/2.5.2事件绑定-体系结构/jQuery.1.0.2.js" />
@@ -419,10 +408,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/demo.html">
+    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        <state relative-caret-position="225">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -433,17 +429,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/package.json">
+    <entry file="file://$PROJECT_DIR$/专题二-underscore/3.1.3-undefined的处理  函数式编程(回调)iteratee设计/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="350">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.1-webpack工程化/index.js">
+    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/module1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
+          <caret column="14" selection-start-column="7" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/dist/app.dafa21.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/专题四-webpack/4.2-webpack核心概念/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
         </state>
       </provider>
     </entry>
