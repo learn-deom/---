@@ -12,16 +12,12 @@ module.exports = {
 	 	 	 test: /\.js$/,
 			  use: {
 	 	 	 	 loader: 'babel-loader',
-				 options: {
-	 	 	 	 	 presets: [
-	 	 	 	 	 	['@babel/preset-env', {
-	 	 	 	 	 	 targets: {
-	 	 	 	 	 	 	 browsers: ['>1%'] // 以浏览器为目标
-						 }
-						}]
-					 ]
-					}
 			  }
+		 },{
+	 	 	test: /\.tsx?$/,
+			 use: {
+	 	 		 loader: 'ts-loader'
+			 }
 		 }]
 	 }
 
