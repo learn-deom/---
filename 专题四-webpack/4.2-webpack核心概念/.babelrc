@@ -1,12 +1,14 @@
+//babel配置
 {
   "presets": [
-    ['@babel/preset-env', {
+    ['@babel/preset-env', // 依赖
+      {
       "targets": {
-        "browsers": ['>1%'] // 以浏览器为目标
+        "browsers": ['>1%'] // 全球大于1%以浏览器为目标
       }
     }]
   ],
   "plugins": [
-    ['@babel/transform-runtime']
+    ['@babel/transform-runtime'] // 局部引入es6方法
   ]
 }
