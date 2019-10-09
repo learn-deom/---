@@ -10,6 +10,7 @@ help.md
 .project
 .settings
 .classpath
+.idea
 
 
 /node_modules/
