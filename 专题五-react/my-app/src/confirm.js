@@ -26,7 +26,7 @@ const confirm = async (message) => {
 				)
 		  }
 		  componentDidMount() {
-				// toggle = true
+				toggle = true
 		  }
 	 }
 	 await ReactDOM.render(<ConfirmComponent/>, showDom)
