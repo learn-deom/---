@@ -1,63 +1,65 @@
-import React, {Component,useState} from 'react';
+import React, {Component, useState} from 'react';
 import './App.css';
-class InputNumber extends Component{
-    constructor(props) {
-        super(props)
+import Test from './test'
+/*
+* 受控和非受控组件
+* */
+class InputNumber extends Component {
+	 constructor(props) {
+		  super(props)
 		  this.state = {
-        	 innerValue: ''
+				innerValue: ''
 		  }
-    }
-    get isControl() {
-    	 return 'value' in this.props
 	 }
+
+	 get isControl() {
+		  return 'value' in this.props
+	 }
+
 	 get value() {
-    	 if(this.isControl) {
-    	 	 return this.props.value
-		 }else{
-    	 	 return this.state.innerValue
-		 }
+		  if (this.isControl) {
+				return this.props.value
+		  } else {
+				return this.state.innerValue
+		  }
 	 }
+
 	 render() {
 		  return (
 			  <input
 				  value={this.value}
-				  onChange={(e)=> {
-				  	 if(!this.isControl) {
-				  	 	 this.setState({
-							  innerValue: e.target.value
-						 })
-					 }
-					 this.props.onChange(e)
+				  onChange={(e) => {
+						if (!this.isControl) {
+							 this.setState({
+								  innerValue: e.target.value
+							 })
+						}
+						this.props.onChange(e)
 				  }}
 			  />
 		  )
 	 }
+
 	 componentDidMount() {
-    	 console.log(this.props.innerValue)
-    	 this.setState({
-			  innerValue: this.props.defaultValue
-		 })
+		  this.setState({
+				innerValue: this.props.defaultValue
+		  })
 
 	 }
 }
-class Test extends Component{
-	 render() {
-	 	 return (
-			 <div>test</div>
-			 )
-	 }
-}
 
-function App(){
-	 const [value,setValue] = useState('aaa')
+function App() {
+	 const [value, setValue] = useState('aaa')
 	 return (
 		 <div>
 			  <Test/>
-			  <InputNumber value={value} onChange={e=>setValue(
+			  <InputNumber value={value} onChange={e => setValue(
 				  e.target.value
 			  )}/>
-			  <InputNumber defaultValue={value} onChange={e=>{}}/>
+			  <InputNumber defaultValue={value} onChange={e => {
+			  }}/>
 		 </div>
 	 )
 }
+
 export default App;

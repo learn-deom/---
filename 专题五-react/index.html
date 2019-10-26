@@ -5,6 +5,26 @@
     <title>Hello React!</title>
 </head>
 <body>
+<div>
+    <div className="m-mask"></div>
+    <div className="m-dialog">
+        <div className="md-dialog">
+            <div className="md-dialog-title">
+                <h4>{title}</h4>
+                <span className="btn">
+                                <i className="iconfont">&times;</i>
+                            </span>
+            </div>
+            <div className="md-dialog-content">
+                {this.props.children}
+            </div>
+            <div className="md-dialog-foot">
+                <a href="#" className="btns">取消</a>
+                <a href="#" className="btns btns-blue">确定</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="example"></div>
 <script>
