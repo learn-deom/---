@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8" />
     <title>Hello React!</title>
-    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
-    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
-    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
 </head>
 <body>
 
 <div id="example"></div>
-<script type="text/babel">
-	 function App(){
-		  const [value,setValue] = useState('aaa')
-		  return (
-			  <div>
-					<InputNumber value={value} onChange={e=>{}}/>
-					<InputNumber defaultValue={value} onChange={e=>{}}/>
-			  </div>
-		  )
+<script>
+    async function confirm() {
+    	return 'hello'
+    }
+	 async function fun(){
+		  let res = await confirm()
+		  console.log(confirm(), 'confirm')
+		  if(res) {
+				console.log("是")
+		  } else {
+				console.log("否")
+		  }
 	 }
-	 ReactDOM.render(<App />, document.getElementById('example'))
+	 fun()
 </script>
 
 </body>
