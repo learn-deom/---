@@ -40,10 +40,19 @@ class InputNumber extends Component{
 
 	 }
 }
+class Test extends Component{
+	 render() {
+	 	 return (
+			 <div>test</div>
+			 )
+	 }
+}
+
 function App(){
 	 const [value,setValue] = useState('aaa')
 	 return (
 		 <div>
+			  <Test/>
 			  <InputNumber value={value} onChange={e=>setValue(
 				  e.target.value
 			  )}/>
