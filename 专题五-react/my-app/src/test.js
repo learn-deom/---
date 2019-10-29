@@ -3,9 +3,17 @@ import React from 'react'
 import {Component} from "react";
 
 class Test extends Component {
-	 render() {
+	 async handleOk() {
+		  let res = await confirm("确定删除吗")
+		  if (res) {
+				console.log("是")
+		  } else {
+				console.log("否")
+		  }
+	 }
+ 	 render() {
 		  return (
-			  <div>test</div>
+			  <div onClick={this.handleOk}>test</div>
 		  )
 	 }
 	 async componentDidMount() {
